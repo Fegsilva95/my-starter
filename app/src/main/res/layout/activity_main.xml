@@ -7,20 +7,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/viewMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
-        android:text="Hello World!"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <TextView
         android:id="@+id/NameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,46 +27,69 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Full Name"
+        android:hint="Add Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/NameLabel"
         app:layout_constraintTop_toBottomOf="@+id/NameLabel" />
 
     <TextView
-        android:id="@+id/starterLabel"
+        android:id="@+id/sortedLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Starter"
+        android:text="Sorted Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/NameInput"
         app:layout_constraintTop_toBottomOf="@+id/NameInput" />
 
     <EditText
-        android:id="@+id/starterInput"
+        android:id="@+id/sortedInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="What's your favorite starter? "
+        android:hint="Sorted name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/starterLabel"
-        app:layout_constraintTop_toBottomOf="@+id/starterLabel" />
+        app:layout_constraintStart_toStartOf="@+id/sortedLabel"
+        app:layout_constraintTop_toBottomOf="@+id/sortedLabel" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/sortearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="buttonClickMessage"
-        android:text="Chose"
+        android:layout_marginTop="52dp"
+        android:onClick="sortNames"
+        android:text="Sortear"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/starterInput" />
+        app:layout_constraintTop_toBottomOf="@+id/sortedInput" />
+
+    <Button
+        android:id="@+id/adicionarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="44dp"
+        android:onClick="addNameList"
+        android:text="Adicionar"
+        app:layout_constraintEnd_toStartOf="@+id/sortearButton"
+        app:layout_constraintTop_toTopOf="@+id/sortedInput" />
+
+    <Button
+        android:id="@+id/limparButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="96dp"
+        android:onClick="clearNames"
+        android:text="Limpar"
+        app:layout_constraintStart_toEndOf="@+id/sortearButton"
+        app:layout_constraintTop_toTopOf="@+id/sortedInput" />
 
 </android.support.constraint.ConstraintLayout>

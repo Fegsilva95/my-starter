@@ -4,26 +4,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    List<String> names = new ArrayList<>();
+    EditText editTextName;
+    EditText editTextSorted;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void buttonClickMessage(View origin) {
-        TextView viewMessage = findViewById(R.id.viewMessage);
-
-        EditText editTextName = findViewById(R.id.NameInput);
-        EditText editTextStarter = findViewById(R.id.starterInput);
-
+    public void addNameList(View origin) {
+        editTextName = findViewById(R.id.NameInput);
         String name = editTextName.getText().toString();
-        String starter = editTextStarter.getText().toString();
-        String message = String.format("Hi %s! Your starter is %s!", name, starter);
+        names.add(name);
+        editTextName.setText("");
+    }
 
-        viewMessage.setText(message);
+    public void sortNames(View origin) {
+        Random random = new Random();
+        int listSize = names.size();
+        if (listSize >= 1) {
+            String nameSorted = names.get(random.nextInt(listSize));
+            editTextSorted = findViewById(R.id.sortedInput);
+            editTextSorted.setText(nameSorted);
+        }
+    }
+
+    public void clearNames(View origin) {
+        names.clear();
+        editTextSorted.setText("");
     }
 }
